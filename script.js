@@ -1,5 +1,7 @@
 const BASE_URL = "https://latest.currency-api.pages.dev/v1/currencies/";
 
+
+// Some variables for elements
 let dropdowns = document.querySelectorAll(".dropdown select");
 let btn = document.querySelector("form button");
 let fromCurrency = document.querySelector(".from select");
@@ -7,16 +9,29 @@ let toCurrency = document.querySelector(".to select");
 let msg = document.querySelector(".msg");
 let rotatebtn = document.querySelector(".exchange");
 
+// Call function convetedVal on screen loading
 window.addEventListener("load", ()=>{
     convetedVal();
 })
 
+
+// For rotating the exchange button, and exchanging the selected coutnries and their flags respectively
 let angle = 0;
 rotatebtn.addEventListener("click", ()=>{
     angle += 360;
     rotatebtn.style.transform = `rotate(${angle}deg)`;
+
+    let temp = fromCurrency.value;
+    fromCurrency.value = toCurrency.value;
+    toCurrency.value = temp;
+
+    updateTheFlag(fromCurrency);
+    updateTheFlag(toCurrency);
+    convetedVal();
 })
 
+
+// selecting the country code from a list of countries
 for (let select of dropdowns){
     for (currencyCode in countryList) {
         let newOpt = document.createElement("option");
@@ -39,6 +54,8 @@ for (let select of dropdowns){
     })
 }
 
+
+// Updating the flags based on the selected country
 let updateTheFlag = (elem)=>{
     let currCode = elem.value;
     let newSrc = `https://flagsapi.com/${countryList[currCode]}/shiny/64.png`;
@@ -47,11 +64,14 @@ let updateTheFlag = (elem)=>{
     flagImg.setAttribute("src", newSrc);
 }
 
+// for calling function convetedVal on clicking button "Get Exchange Rates"
 btn.addEventListener("click", (evt)=>{
     evt.preventDefault();
     convetedVal();
 })
 
+
+// function ConvetedVal, to convert the values based on the API response
 let convetedVal = async ()=>{
     let amount = document.querySelector(".amount input");
     let amountVal = amount.value;
