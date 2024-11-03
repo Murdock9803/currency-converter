@@ -88,19 +88,14 @@ form input {
   top: 10px;
 }
 
-.rotation {
-  transform: rotateZ(180deg);
-  transition-duration: 2s;
-}
-
 .exchange:hover {
   background-color: #232046;
-  transition-duration: 2s;
+  transition-duration: 1s;
 }
 
 .exchange:hover i {
   color: #948eeb;
-  transition-duration: 2s;
+  transition-duration: 1s;
 }
 
 .exchange i {

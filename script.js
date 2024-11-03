@@ -13,7 +13,7 @@ window.addEventListener("load", ()=>{
 
 let angle = 0;
 rotatebtn.addEventListener("click", ()=>{
-    angle += 180;
+    angle += 360;
     rotatebtn.style.transform = `rotate(${angle}deg)`;
 })
 
