@@ -7,7 +7,7 @@
 
 body {
   min-height: 100vh;
-  background-color: rgb(139, 85, 85);
+  background-color: rgb(16, 12, 39);
 }
 
 .main {
@@ -18,7 +18,7 @@ body {
 }
 
 .container {
-  background-color: rgb(167, 125, 125);
+  background-color: rgb(125, 123, 173);
   padding: 2rem;
   border-radius: 1rem;
   min-height: 45vh;

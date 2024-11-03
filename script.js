@@ -1,4 +1,4 @@
-const BASE_URL = "https://cdn.jsdelivr.net/gh/fawazahmed0/currency-api@1/latest/currencies/";
+const BASE_URL = "https://latest.currency-api.pages.dev/v1/currencies/";
 
 let dropdowns = document.querySelectorAll(".dropdown select");
 let btn = document.querySelector("form button");
@@ -54,11 +54,11 @@ let convetedVal = async ()=>{
         amount.value = "1";
     }
 
-    const newUrl = `${BASE_URL}/${fromCurrency.value.toLowerCase()}/${toCurrency.value.toLowerCase()}.json`
+    const newUrl = `${BASE_URL}/${fromCurrency.value.toLowerCase()}.json`
     let response = await fetch(newUrl);
     let data = await response.json();
     
-    let rate = data[toCurrency.value.toLowerCase()];
+    let rate = data[fromCurrency.value.toLowerCase()][toCurrency.value.toLowerCase()];
     let finalAmount = amountVal * rate;
     msg.innerText = `${amountVal} ${fromCurrency.value} = ${finalAmount} ${toCurrency.value}`;
 }
