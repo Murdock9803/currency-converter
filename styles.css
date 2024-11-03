@@ -39,8 +39,9 @@ input {
 }
 
 form input {
-  background-color: #cdaaaa;
-  border: 1px solid lightgray;
+  background-color: #b6b6ff;
+  border: 1px solid rgb(255, 255, 255);
+  color: #050023;
   font-size: 1rem;
   height: 3rem;
   padding-left: 0.5rem;
@@ -75,12 +76,44 @@ form input {
 .select-container select {
   font-size: 1rem;
   width: auto;
-  background-color: #cdaaaa;
+  background-color: #a1a7ff;
+}
+
+.exchange {
+  border-radius: 100%;
+  background-color: #948eeb;
+  height: 40px;
+  width: 40px;
+  position: relative;
+  top: 10px;
+}
+
+.rotation {
+  transform: rotateZ(180deg);
+  transition-duration: 2s;
+}
+
+.exchange:hover {
+  background-color: #232046;
+  transition-duration: 2s;
+}
+
+.exchange:hover i {
+  color: #948eeb;
+  transition-duration: 2s;
+}
+
+.exchange i {
+  position: absolute;
+  top: -6px;
+  left: 11.5px;
+  color: #272a47;
+  font-size: 20px;
 }
 
 .msg {
   margin: 2rem 0 2rem 0;
-  background-color: rgb(74, 84, 116);
+  background-color: rgb(45, 59, 105);
   border-radius: 0.75rem;
   padding: 0.75rem;
   color: #c2c0ff;
@@ -89,15 +122,15 @@ form input {
 
 form button {
   height: 3rem;
-  background-color: #7d4f4f;
-  color: #ecd4d4;
+  background-color: #423f6c;
+  color: #d4d6ec;
   font-size: 1.15rem;
   cursor: pointer;
   transition: all ease 0.5s;
 }
 
 form button:hover {
-    background-color: #583030;
+    background-color: #232046;
 }
 
 .footer {
@@ -106,4 +139,9 @@ form button:hover {
   right: 0;
   margin-right: 10px;
   margin-bottom: 5px;
+  color: #716edc;
+}
+
+.footer a {
+  color: #999cc0;
 }

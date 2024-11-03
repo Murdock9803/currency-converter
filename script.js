@@ -5,9 +5,16 @@ let btn = document.querySelector("form button");
 let fromCurrency = document.querySelector(".from select");
 let toCurrency = document.querySelector(".to select");
 let msg = document.querySelector(".msg");
+let rotatebtn = document.querySelector(".exchange");
 
 window.addEventListener("load", ()=>{
     convetedVal();
+})
+
+let angle = 0;
+rotatebtn.addEventListener("click", ()=>{
+    angle += 180;
+    rotatebtn.style.transform = `rotate(${angle}deg)`;
 })
 
 for (let select of dropdowns){
